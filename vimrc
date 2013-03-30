@@ -14,18 +14,18 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim73/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
-              __     _____ __  __ ____   ____     ______   __
-              \ \   / /_ _|  \/  |  _ \ / ___|   | __ ) \ / /
-               \ \ / / | || |\/| | |_) | |       |  _ \\ V / 
-                \ V /  | || |  | |  _ <| |___    | |_) || |  
-                 \_/  |___|_|  |_|_| \_\\____|   |____/ |_|  
-                                             
-                  _    ____  _____ ______        ___    ____  
-                 / \  |  _ \| ____/ ___\ \      / / \  |  _ \ 
-                / _ \ | |_) |  _| \___ \\ \ /\ / / _ \ | |_) |
-               / ___ \|  _ <| |___ ___) |\ V  V / ___ \|  _ < 
-              /_/   \_\_| \_\_____|____/  \_/\_/_/   \_\_| \_\
-          
+"              __     _____ __  __ ____   ____     ______   __
+"              \ \   / /_ _|  \/  |  _ \ / ___|   | __ ) \ / /
+"               \ \ / / | || |\/| | |_) | |       |  _ \\ V / 
+"                \ V /  | || |  | |  _ <| |___    | |_) || |  
+"                 \_/  |___|_|  |_|_| \_\\____|   |____/ |_|  
+"                                             
+"                  _    ____  _____ ______        ___    ____  
+"                 / \  |  _ \| ____/ ___\ \      / / \  |  _ \ 
+"                / _ \ | |_) |  _| \___ \\ \ /\ / / _ \ | |_) |
+"               / ___ \|  _ <| |___ ___) |\ V  V / ___ \|  _ < 
+"              /_/   \_\_| \_\_____|____/  \_/\_/_/   \_\_| \_\
+"          
 
 "                               ARESWAR'S VIMRC
 "                          Inspired by Chewie's vimrc : 
@@ -71,10 +71,10 @@ set cursorline
 set tabstop=8
 
 " The number of spaces inserted when you press tab
-set softtabstop=4
+set softtabstop=2
 
 " The number of spaces inserted/removed when using < or >
-set shiftwidth=4
+set shiftwidth=2
 
 " Insert spaces instead of tabs
 set expandtab
