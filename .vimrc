@@ -52,6 +52,9 @@ set encoding=utf-8
 " Show line number
 set number
 
+" Show a vertical line at the 80th column
+set colorcolumn=80
+
 " Set the minimal amount of lignes under and above the cursor
 " Useful for keeping context when moving with j/k
 set scrolloff=5
@@ -71,10 +74,10 @@ set cursorline
 set tabstop=8
 
 " The number of spaces inserted when you press tab
-set softtabstop=2
+set softtabstop=4
 
 " The number of spaces inserted/removed when using < or >
-set shiftwidth=2
+set shiftwidth=4
 
 " Insert spaces instead of tabs
 set expandtab
@@ -87,3 +90,13 @@ set smarttab
 set autoindent
 
 colors desert
+
+" Vundle (Plugin manager) setup
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Vundle Bundles
+Bundle 'Lokaltog/vim-powerline'
