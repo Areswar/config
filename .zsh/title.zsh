@@ -24,5 +24,3 @@ function title_preexec {
 }
 
 autoload -U add-zsh-hook
-add-zsh-hook precmd title_precmd
-add-zsh-hook preexec title_preexec

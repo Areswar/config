@@ -55,12 +55,21 @@ set number
 " Show a vertical line at the 80th column
 set colorcolumn=80
 
+" Use 256 colors
+set t_Co=256
+
 " Set the minimal amount of lignes under and above the cursor
 " Useful for keeping context when moving with j/k
 set scrolloff=5
 
 " Enables syntax highlighting
 syntax on
+
+"Use unicode symbols for Powerline plugin
+let g:Powerline_symbols='fancy'
+
+"Always show statusbar for Powerline plugin
+set laststatus=2
 
 " Allow mouse use in vim
 set mouse=a
@@ -100,3 +109,4 @@ Bundle 'gmarik/vundle'
 
 " Vundle Bundles
 Bundle 'Lokaltog/vim-powerline'
+

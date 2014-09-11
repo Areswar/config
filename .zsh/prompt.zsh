@@ -2,8 +2,8 @@
 # My extravagant multi-line zsh prompt.
 
 # Enables/disables bold
-bold=$'%{\e[1m%}'
-nobold=$'%{\e[22m%}'
+#bold=$'%{\e[1m%}'
+#nobold=$'%{\e[22m%}'
 
 # Resets all styles
 reset=$'%{\e[0m%}'
