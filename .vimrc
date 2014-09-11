@@ -31,7 +31,8 @@ runtime! archlinux.vim
 "                          Inspired by Chewie's vimrc : 
 "              https://github.com/Chewie/configs/blob/master/.vimrc
 
-
+set background=dark
+colors solarized
 
 " Disable vi compatibility mode
 set nocompatible
@@ -54,9 +55,6 @@ set number
 
 " Show a vertical line at the 80th column
 set colorcolumn=80
-
-" Use 256 colors
-set t_Co=256
 
 " Set the minimal amount of lignes under and above the cursor
 " Useful for keeping context when moving with j/k
@@ -97,8 +95,6 @@ set smarttab
 " Set basic indenting (i.e. copy the indentation of the previous line)
 " When filetype detection didn't find a fancy indentation scheme
 set autoindent
-
-colors desert
 
 " Vundle (Plugin manager) setup
 set rtp+=~/.vim/bundle/vundle/
