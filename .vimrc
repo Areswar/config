@@ -25,14 +25,9 @@ runtime! archlinux.vim
 "                / _ \ | |_) |  _| \___ \\ \ /\ / / _ \ | |_) |
 "               / ___ \|  _ <| |___ ___) |\ V  V / ___ \|  _ < 
 "              /_/   \_\_| \_\_____|____/  \_/\_/_/   \_\_| \_\
-"          
 
-"                               ARESWAR'S VIMRC
-"                          Inspired by Chewie's vimrc : 
-"              https://github.com/Chewie/configs/blob/master/.vimrc
 
-set background=dark
-colors solarized
+colors peachpuff
 
 " Disable vi compatibility mode
 set nocompatible
@@ -63,12 +58,6 @@ set scrolloff=5
 " Enables syntax highlighting
 syntax on
 
-"Use unicode symbols for Powerline plugin
-let g:Powerline_symbols='fancy'
-
-"Always show statusbar for Powerline plugin
-set laststatus=2
-
 " Allow mouse use in vim
 set mouse=a
 
@@ -95,14 +84,4 @@ set smarttab
 " Set basic indenting (i.e. copy the indentation of the previous line)
 " When filetype detection didn't find a fancy indentation scheme
 set autoindent
-
-" Vundle (Plugin manager) setup
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-
-" Vundle Bundles
-Bundle 'Lokaltog/vim-powerline'
 
