@@ -29,9 +29,6 @@ runtime! archlinux.vim
 " Disable vi compatibility mode
 set nocompatible
 
-" Enable filetype detection for plugins and indentation options
-filetype plugin indent on
-
 " Reload a file when it is changed from the outside
 set autoread
 
@@ -52,6 +49,7 @@ autocmd FileType php,c,java,cpp,js inoremap "  ""<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap '  ''<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap [  []<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap /* /*  */<Esc>hhha
+autocmd FileType c,cpp inoremap //* /**<CR><Esc>0i*/<Esc>O<Esc>0i** 
 
 " Displays Line ends and invisible chars
 set list
@@ -99,4 +97,5 @@ set smarttab
 " Set basic indenting (i.e. copy the indentation of the previous line)
 " When filetype detection didn't find a fancy indentation scheme
 set autoindent
+autocmd Filetype c set cindent
 
