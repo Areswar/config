@@ -45,12 +45,13 @@ set encoding=utf-8
 " Show line number
 set number
 
-" Closes Brackets, braces, and strings automatically
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap (  ()<Esc>ha
-inoremap "  ""<Esc>ha
-inoremap '  ''<Esc>ha
-inoremap [  []<Esc>ha
+" Closes Brackets, braces, strings... automatically
+autocmd FileType php,c,java,cpp,js inoremap {<CR>  {<CR>}<Esc>O
+autocmd FileType php,c,java,cpp,js inoremap (  ()<Esc>ha
+autocmd FileType php,c,java,cpp,js inoremap "  ""<Esc>ha
+autocmd FileType php,c,java,cpp,js inoremap '  ''<Esc>ha
+autocmd FileType php,c,java,cpp,js inoremap [  []<Esc>ha
+autocmd FileType php,c,java,cpp,js inoremap /* /*  */<Esc>hhha
 
 " Displays Line ends and invisible chars
 set list
