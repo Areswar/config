@@ -42,6 +42,9 @@ set encoding=utf-8
 " Show line number
 set number
 
+" Removes spaces at end of lines when writing
+autocmd BufWritePre * :%s/\s\+$//ge
+
 " Closes Brackets, braces, strings... automatically
 autocmd FileType php,c,java,cpp,js inoremap {<CR>  {<CR>}<Esc>O
 autocmd FileType php,c,java,cpp,js inoremap (  ()<Esc>ha
@@ -83,10 +86,10 @@ set cursorline
 set tabstop=8
 
 " The number of spaces inserted when you press tab
-set softtabstop=4
+set softtabstop=2
 
 " The number of spaces inserted/removed when using < or >
-set shiftwidth=4
+set shiftwidth=2
 
 " Insert spaces instead of tabs
 set expandtab
