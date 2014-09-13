@@ -7,7 +7,7 @@ zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename '/home/chewie/.zshrc'
+zstyle :compinstall filename '/home/veyry_p/.zshrc'
 
 autoload -Uz compinit
 compinit

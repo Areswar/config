@@ -26,9 +26,6 @@ runtime! archlinux.vim
 "               / ___ \|  _ <| |___ ___) |\ V  V / ___ \|  _ < 
 "              /_/   \_\_| \_\_____|____/  \_/\_/_/   \_\_| \_\
 
-
-colors peachpuff
-
 " Disable vi compatibility mode
 set nocompatible
 
@@ -48,15 +45,19 @@ set encoding=utf-8
 " Show line number
 set number
 
-" Show a vertical line at the 80th column
-set colorcolumn=80
-
 " Set the minimal amount of lignes under and above the cursor
 " Useful for keeping context when moving with j/k
 set scrolloff=5
 
 " Enables syntax highlighting
 syntax on
+
+" Default cterm foreground and background color to NONE
+highlight Normal ctermfg=NONE ctermbg=NONE
+
+" Background color in the first 80 columns different from the next
+let &colorcolumn=join(range(80,999),",")
+highlight ColorColumn ctermbg=234 guibg=#ffffff
 
 " Allow mouse use in vim
 set mouse=a
