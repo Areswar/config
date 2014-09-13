@@ -45,6 +45,18 @@ set encoding=utf-8
 " Show line number
 set number
 
+" Closes Brackets, braces, and strings automatically
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap (  ()<Esc>ha
+inoremap "  ""<Esc>ha
+inoremap '  ''<Esc>ha
+inoremap [  []<Esc>ha
+
+" Displays Line ends and invisible chars
+set list
+set listchars=tab:>─,eol:¬,trail:\ ,nbsp:¤
+
+
 " Set the minimal amount of lignes under and above the cursor
 " Useful for keeping context when moving with j/k
 set scrolloff=5
@@ -57,12 +69,13 @@ highlight Normal ctermfg=NONE ctermbg=NONE
 
 " Background color in the first 80 columns different from the next
 let &colorcolumn=join(range(80,999),",")
-highlight ColorColumn ctermbg=234 guibg=#ffffff
+highlight ColorColumn ctermbg=234 guibg=234
 
 " Allow mouse use in vim
 set mouse=a
 
 " Highlight current line
+hi CursorLine cterm=NONE ctermbg=236
 set cursorline
 
 " The length of a tab
