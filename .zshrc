@@ -1,11 +1,15 @@
-# .zshrc
-# Source every configuration file in .zsh
-
 for f in ~/.zsh/*; do source $f; done
-test -d ~/.local.zsh/ && for f in ~/.local.zsh/*; do source $f; done
-
-test -f ~/.extra-paths && source ~/.extra-paths
-
 true
 
+
+echo -en "\e]2;Ares's fancy shell\a"
+
+# ALIASES
 alias ls='ls --color=auto'
+alias us='setxkbmap us'
+alias fr='setxkbmap fr'
+alias ll='ls -l'
+alias ponyloop='~/ponyloop'
+alias gitls='git ls-tree -r master --name-only'
+
+export PAGE=most

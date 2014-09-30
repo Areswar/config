@@ -16,7 +16,7 @@ pc=$'%{\e[34m%}'
 
 l2="$pc> $reset"
 
-l1_prompt="%B${sc}[$hc%n$sc%{@%}$hc%M${sc}>>$dc%~${sc}]%b"
+l1_prompt="%B${sc}[${hc}\$?${sc}]${sc}[$hc%n$sc%{@%}$hc%M${sc}>>$dc%~${sc}]%b"
 
 l1_date="$pc%D %*"
 
