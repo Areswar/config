@@ -1,3 +1,4 @@
+
 " Vim color file
 "
 "  "    __       _ _       _                             "

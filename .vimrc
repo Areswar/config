@@ -58,7 +58,7 @@ autocmd FileType php,c,java,cpp,js inoremap "  ""<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap '  ''<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap [  []<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap /* /*  */<Esc>hhha
-autocmd FileType c,cpp inoremap //* /**<CR><Esc>0i*/<Esc>O<Esc>0i**
+autocmd FileType c,cpp inoremap //* /**<CRCAT_HAT_H
 
 " Displays Line ends and invisible chars
 set list
@@ -157,3 +157,13 @@ let g:airline_powerline_fonts = 1
 
 filetype plugin indent on
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>

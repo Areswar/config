@@ -1,6 +1,6 @@
     KEYMAP=us -variant alt-intl
     urxvt*background : black
-    urxvt*foreground : #008B8B
+    urxvt*foreground : #FFFFFF
     urxvt*font : xft:DejaVu Sans Mono:pixelsize=12
     urxvt*transparent : true
     urxvt*shading : 30

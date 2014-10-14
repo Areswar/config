@@ -11,5 +11,6 @@ alias fr='setxkbmap fr'
 alias ll='ls -l'
 alias ponyloop='~/ponyloop'
 alias gitls='git ls-tree -r master --name-only'
+alias myssh='ssh ares@ingd.eu -p 2222'
 
-export PAGE=most
+export PAGER=most
