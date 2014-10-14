@@ -155,6 +155,9 @@ set laststatus=2
 let g:Powerline_symbols = "fancy"
 let g:airline_powerline_fonts = 1
 
+" Fugitive Bundle - Git management
+Bundle 'tpope/vim-fugitive.git'
+
 filetype plugin indent on
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
