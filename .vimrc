@@ -1,19 +1,3 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
-" This line should not be removed as it ensures that various options are
-" properly set to work with the Vim-related packages.
-runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim73/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
-
 "              __     _____ __  __ ____   ____     ______   __
 "              \ \   / /_ _|  \/  |  _ \ / ___|   | __ ) \ / /
 "               \ \ / / | || |\/| | |_) | |       |  _ \\ V /
@@ -28,10 +12,8 @@ runtime! archlinux.vim
 
 
 " Colorscheme
-"colorscheme molokai
-"let g:molokai_original = 1
-"let g:rehash256 = 1
 colorscheme jellybeans
+
 " Disable vi compatibility mode
 set nocompatible
 
@@ -52,13 +34,8 @@ set number
 autocmd BufWritePre *.c,*.h :%s/\s\+$//ge
 
 " Closes Brackets, braces, strings... automatically
-autocmd FileType php,c,java,cpp,js inoremap {<CR>  {<CR>}<Esc>O
-autocmd FileType php,c,java,cpp,js inoremap (  ()<Esc>ha
-autocmd FileType php,c,java,cpp,js inoremap "  ""<Esc>ha
-autocmd FileType php,c,java,cpp,js inoremap '  ''<Esc>ha
-autocmd FileType php,c,java,cpp,js inoremap [  []<Esc>ha
 autocmd FileType php,c,java,cpp,js inoremap /* /*  */<Esc>hhha
-autocmd FileType c,cpp inoremap //* /**<CRCAT_HAT_H
+autocmd FileType c,cpp inoremap //* /**<CR><Esc>0i*/<Esc>O<Esc>0i**
 
 " Displays Line ends and invisible chars
 set list
@@ -152,11 +129,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Airline Bundle
 Plugin 'bling/vim-airline'
 set laststatus=2
-let g:Powerline_symbols = "fancy"
+set timeoutlen=0
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 " Fugitive Bundle - Git management
 Bundle 'tpope/vim-fugitive.git'
+
+" Auto close brackets braces and others
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'townk/vim-autoclose'
+
+" Toogle number lines
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+let g:NumberToggleTrigger=',m'
 
 filetype plugin indent on
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
