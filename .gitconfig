@@ -1,0 +1,18 @@
+[user]
+	email = veyry_p@epita.fr
+	name = Pierre-Alexandre VEYRY
+[color]
+	status = auto
+	ui = true
+	branch = true
+	diff = true
+	interactive = true
+[alias]
+  ci = commit -m
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ls = ls-tree -r master --name-only
+  sl = shortlog -n -s
+  st = status
+[push]
+	default = simple
