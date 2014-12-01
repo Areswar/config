@@ -8,4 +8,5 @@ numlockx &
 #exec openbox-session
 exec i3
 # exec startxfce4
+exec feh --bg-scale ~/Documents/background.jpg
 # ...or the Window Manager of your choice

@@ -15,5 +15,6 @@ alias gitls='git ls-tree -r master --name-only'
 alias myssh='ssh ares@ingd.eu -p 2222'
 alias pull='git pull --rebase'
 alias l='ls'
+alias lol="toilet --gay lol"
 
 export PAGER=most

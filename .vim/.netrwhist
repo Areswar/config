@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/veyry_p/projets/formulaone/badibe_r-formula-one/src'
-let g:netrw_dirhist_2='/home/veyry_p/projets/raytracer/veyry_p-raytracer/.git'
-let g:netrw_dirhist_3='/home/veyry_p/projets/raytracer/veyry_p-raytracer/src'
-let g:netrw_dirhist_4='/home/veyry_p/projets/raytracer/veyry_p-raytracer/check'
-let g:netrw_dirhist_5='/home/veyry_p/projets/raytracer/veyry_p-raytracer/src'
-let g:netrw_dirhist_6='/home/veyry_p/projets/raytracer/veyry_p-raytracer/check'
-let g:netrw_dirhist_7='/home/veyry_p/test'
-let g:netrw_dirhist_8='/home/veyry_p/projets/myhttpd/veyry_p-myhttpd/src'
-let g:netrw_dirhist_9='/home/veyry_p/test'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/veyry_p/test'
+let g:netrw_dirhist_2='/home/veyry_p/algo/tp2'
+let g:netrw_dirhist_3='/home/veyry_p/.zsh'
+let g:netrw_dirhist_4='/home/veyry_p/test'

@@ -20,6 +20,9 @@ set nocompatible
 " Reload a file when it is changed from the outside
 set autoread
 
+" Set the leader key to ,
+let mapleader=","
+
 " Write the file when we leave the buffer
 set autowrite
 
@@ -31,10 +34,11 @@ set encoding=utf-8
 set number
 
 " Removes spaces at end of lines when writing
-autocmd BufWritePre *.c,*.h :%s/\s\+$//ge
+autocmd BufWritePre *.c,*.h,*.cpp,*.cxx,*.cc,*.hh,*.hxx :%s/\s\+$//ge
 
 " Closes Brackets, braces, strings... automatically
 autocmd FileType php,c,java,cpp,js inoremap /* /*  */<Esc>hhha
+autocmd FileType php,c,java,cpp,js inoremap {<CR> {<CR><Esc>O
 autocmd FileType c,cpp inoremap //* /**<CR><Esc>0i*/<Esc>O<Esc>0i**
 
 " Displays Line ends and invisible chars
@@ -83,7 +87,7 @@ set smarttab
 set autoindent
 autocmd Filetype c set cindent
 
-
+noremap <F2> :bn<CR>
 
 filetype off
 
@@ -94,14 +98,16 @@ call vundle#rc()
 " Vundle Bundle
 Plugin 'gmarik/vundle'
 
+" YouCompleteMe completion Plugin
+" Bundle 'Valloric/YouCompleteMe'
+" let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " Neocomplete Bundle
 Plugin 'Shougo/neocomplete.vim'
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#max_list = 20
-
-" YouCompleteMe Bundle
-"Plugin 'Valloric/YouCompleteMe'
-"let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Syntastic plugin
 Plugin 'scrooloose/syntastic'
@@ -112,6 +118,10 @@ let g:syntastic_cpp_compiler = 'clang++' " Use clang++ instead of g++
 let g:syntastic_cpp_compiler_options = '-Wall -Wextra -pedantic -std=c++11'
 let g:syntastic_cpp_check_header=1 " Check headers in c++
 let g:syntastic_ocaml_use_ocamlc = 1 " Use ocamlc instead of ocamlopt
+
+" Header/Source files switching
+Plugin 'derekwyatt/vim-fswitch'
+nmap <F1> :FSHere<cr>
 
 " Supertab Bundle
 Plugin 'ervandew/supertab'
@@ -136,10 +146,15 @@ let g:airline_powerline_fonts = 1
 " Fugitive Bundle - Git management
 Bundle 'tpope/vim-fugitive.git'
 
+"Bundle 'vim-scripts/DoxygenToolkit.vim'
+"let g:DoxygenToolkit_paramTag_pre="@param "
+"let g:DoxygenToolkit_returnTag="@return "
+
 " Auto close brackets braces and others
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'townk/vim-autoclose'
+
 
 " Toogle number lines
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
@@ -152,8 +167,3 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
