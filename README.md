@@ -12,3 +12,16 @@ My configuration files for git, vim, bash, zsh, urxvt, i3wm...
 * .xinitrc : This file is called when X Server is launched
 * get_updates.sh : This script gets updates to these config files from my home
 and applies them in the repository.
+
+## Vim Plugins
+* Vundle : Vim Plugins Manager
+* Neocomplete : Autocompletion plugin
+* Syntastic : Syntax checking plugin
+* Vim-fswitch : Quick buffer switch
+* Supertab : Improvements on Vim completion
+* Airline : Fancy vim status and buffer bars
+* vim-snippets : Adds snippets to vim and Neocomplete
+* Ultisnips : Snippet engine
+* Vim-fugitive : Git plugin
+* Vim-surround, vim-repeat, vim autoclose : Autoclosing for brackets, braces etc
+* vim-numbertoggle : Toggle tool for line numbering (relative, absolute)
