@@ -12,7 +12,7 @@
 
 
 " Colorscheme
-colorscheme jellybeans
+colorscheme molokai
 
 " Disable vi compatibility mode
 set nocompatible
@@ -62,7 +62,7 @@ set colorcolumn=80
 set mouse=a
 
 " Highlight current line
-hi CursorLine cterm=NONE ctermbg=236
+hi CursorLine cterm=NONE ctermbg=234
 set cursorline
 
 " The length of a tab
@@ -111,11 +111,12 @@ let g:neocomplete#max_list = 20
 
 " Syntastic plugin
 Plugin 'scrooloose/syntastic'
+au BufRead,BufNewFile *.cc,*.hh,*.hxx set ft=cpp
 let g:syntastic_c_compiler='clang' " Use clang instead of gcc
 let g:syntastic_c_compiler_options = '-Wall -Wextra -pedantic -std=c99'
 let g:syntastic_c_check_header=1 " Check headers in c
 let g:syntastic_cpp_compiler = 'clang++' " Use clang++ instead of g++
-let g:syntastic_cpp_compiler_options = '-Wall -Wextra -pedantic -std=c++11'
+let g:syntastic_cpp_compiler_options = '-Wall -Wextra -pedantic -std=c++1y'
 let g:syntastic_cpp_check_header=1 " Check headers in c++
 let g:syntastic_ocaml_use_ocamlc = 1 " Use ocamlc instead of ocamlopt
 
@@ -141,6 +142,7 @@ Plugin 'bling/vim-airline'
 set laststatus=2
 set timeoutlen=0
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="wombat"
 let g:airline_powerline_fonts = 1
 
 " Fugitive Bundle - Git management
@@ -167,3 +169,5 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
+
+au BufRead,BufNewFile *.aasm set filetype=aasm

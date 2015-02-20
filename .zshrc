@@ -5,6 +5,8 @@ true
 echo -en "\e]2;Ares's fancy shell\a"
 
 # ALIASES
+alias gpp='clang++ -Wextra -Wall -Werror -std=c++1y'
+alias slrn='slrn -h news.epita.fr'
 alias ls='ls --color=auto'
 alias ..='cd ..'
 alias us='setxkbmap us'
@@ -16,5 +18,9 @@ alias myssh='ssh ares@ingd.eu -p 2222'
 alias pull='git pull --rebase'
 alias l='ls'
 alias lol="toilet --gay lol"
+alias p="ping 8.8.8.8"
+alias fixme="grep -rn 'FIXME: Some code'"
+
 
 export PAGER=most
+export GREP_OPTIONS='--color=always'
