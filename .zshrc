@@ -1,7 +1,6 @@
 for f in ~/.zsh/*; do source $f; done
 true
 
-
 echo -en "\e]2;Ares's fancy shell\a"
 
 # ALIASES
@@ -20,6 +19,8 @@ alias l='ls'
 alias lol="toilet --gay lol"
 alias p="ping 8.8.8.8"
 alias fixme="grep -rn 'FIXME: Some code'"
+alias fixing="grep -rn 'FIXING:'"
+alias mgrep="grep -rn"
 
 
 export PAGER=most
