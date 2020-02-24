@@ -7,10 +7,9 @@
 
 
 cd $HOME
-ln -s $OLDPWD/.vimrc .
-ln -s $OLDPWD/.vim .
-ln -s $OLDPWD/.zshrc .
-ln -s $OLDPWD/.zsh .
-ln -s $OLDPWD/.Xdefaults .
-ln -s $OLDPWD/.gitconfig .
-ln -s $OLDPWD/.bashrc .
+ln -s $OLDPWD/dotfiles/vimrc .vimrc 
+ln -s $OLDPWD/dotfiles/vim .vim 
+ln -s $OLDPWD/dotfiles/zshrc .zshrc 
+ln -s $OLDPWD/dotfiles/zsh .zsh 
+ln -s $OLDPWD/dotfiles/gitconfig .gitconfig 
+ln -s $OLDPWD/dotfiles/bashrc .bashrc 
