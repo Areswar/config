@@ -1,5 +1,6 @@
 .*.swp
-.vim/.netrwhist
-.vim/bundle/*
-.vim/autoload/plug.vim
-.vim/plugged
+dotfiles/vim/.netrwhist
+dotfiles/vim/bundle/*
+dotfiles/vim/autoload/plug.vim
+dotfiles/vim/plugged
+*arista*
