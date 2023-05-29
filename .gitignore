@@ -4,3 +4,4 @@ dotfiles/vim/bundle/*
 dotfiles/vim/autoload/plug.vim
 dotfiles/vim/plugged
 *arista*
+fish_variables
