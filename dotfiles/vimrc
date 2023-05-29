@@ -25,6 +25,9 @@ set autoread
 " Set the leader key to ,
 let mapleader=","
 
+let &t_SI = "\e[5 q"
+let &t_EI = "\e[2 q"
+
 " Write the file when we leave the buffer
 set autowrite
 
