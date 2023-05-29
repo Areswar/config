@@ -14,4 +14,5 @@ cd $HOME
 [ ! -d ".zsh" ] && ln -s $OLDPWD/dotfiles/zsh .zsh  || echo ".zsh  already exists"
 [ ! -d ".gitconfig" ] && ln -s $OLDPWD/dotfiles/gitconfig .gitconfig  || echo ".gitconfig  already exists"
 [ ! -d ".bashrc" ] && ln -s $OLDPWD/dotfiles/bashrc .bashrc  || echo ".bashrc  already exists"
-[ ! -d ".config" ] && ln -s $OLDPWD/dotfiles/xdg_config .config || echo ".config already exists"
+[ ! -d ".config/nvim" ] && mkdir -p .config && ln -s $OLDPWD/dotfiles/xdg_config/nvim .config/nvim || echo ".config/nvim already exists"
+[ ! -d ".config/fish" ] && mkdir -p .config && ln -s $OLDPWD/dotfiles/xdg_config/fish .config/fish || echo ".config/fish already exists"
