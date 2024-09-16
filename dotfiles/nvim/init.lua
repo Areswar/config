@@ -1,5 +1,5 @@
 -- Colorscheme
-vim.cmd('colorscheme jellybeans')
+--vim.cmd('colorscheme jellybeans')
 
 -- disable netrw because NvimTree replaces it
 vim.g.loaded_netrw = 1
@@ -146,6 +146,8 @@ end
 
     -- Airline-like lua Bundle (uses nvim-tree-web-devicons)
     'nvim-lualine/lualine.nvim',
+
+    'catppuccin/nvim',
 }
 
 -- Configure w0rp/ale
@@ -180,3 +182,16 @@ vim.api.nvim_create_autocmd('VimEnter', {
     pattern = {'*'},
     command = 'if argc() == 0 && !exists("s:std_in") | NvimTreeFocus | endif'
 })
+
+-- Configure catppuccin colorscheme
+require('catppuccin').setup{
+    flavour = 'mocha',
+    color_overrides = {
+        mocha = {
+            base = "#151515",
+            mantle = "#000000",
+            crust = "#000000",
+        },
+    },
+}
+vim.cmd('colorscheme catppuccin')
