@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd('BufEnter', {
     command = 'set noexpandtab nolist tabstop=4'
 })
 
--- Map keys F1 and F2 to previous and next buffer
+-- Map keys F1 and F2 to previous and next tab
 vim.api.nvim_set_keymap('n', '<F1>', ':bp<cr>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<F2>', ':bn<cr>', {noremap = true, silent = true})
 
@@ -94,104 +94,113 @@ local function clone_paq()
     end
 end
 
-local function bootstrap_paq(packages)
-    local first_install = clone_paq()
-    vim.cmd.packadd("paq-nvim")
-    local paq = require("paq")
-    if first_install then
-        vim.notify("Installing plugins... If prompted, hit Enter to continue.")
-    end
-
-    -- Read and install packages
-    paq(packages)
-    paq.install()
-end
-
-  -- Call helper function
-  bootstrap_paq {
-    "savq/paq-nvim",
-
-    -- Language server for neovim
-    'neovim/nvim-lspconfig',
-
-    -- AST production for language helper packages
-    'nvim-treesitter/nvim-treesitter',
-
-    -- Ale plugin for asynchronous syntax check
-    'w0rp/ale',
-
-    -- Fugitive Bundle - Git Management
-    'tpope/vim-fugitive',
-
-    -- Go support
-    'fatih/vim-go',
-
-    -- ToggleTerm (persistent toggleable terminal)
-    'akinsho/toggleterm.nvim',
-
-    -- Comfortable scrolling
-    'yuttie/comfortable-motion.vim',
-
-    -- Auto close brackets braces and others
-    'tpope/vim-surround',
-    'tpope/vim-repeat',
-    'townk/vim-autoclose',
-
-    -- Toogle number lines
-    'jeffkreeftmeijer/vim-numbertoggle',
-
-    -- File tree
-    'nvim-tree/nvim-tree.lua',
-    'nvim-tree/nvim-web-devicons',
-
-    -- Airline-like lua Bundle (uses nvim-tree-web-devicons)
-    'nvim-lualine/lualine.nvim',
-
-    'catppuccin/nvim',
-}
-
--- Configure w0rp/ale
-vim.g.ale_sign_error = '✘'
-vim.g.ale_sign_warning = '⚠'
-
--- Configure nvim-lualine/lualine.nvim
-require('lualine').setup {
-    options = {
-      theme = 'wombat',
-    },
-  }
-
--- Setup toggleterm
-require('toggleterm').setup()
-
--- Configure comfortable-motion
-vim.g.comfortable_motion_scroll_down_key = "j"
-vim.g.comfortable_motion_scroll_up_key = "k"
-vim.g.comfortable_motion_friction = 80.0
-vim.g.comfortable_motion_air_drag = 2.0
-
--- Configure vim-numbertoggle
-vim.api.nvim_set_keymap('n', '<C-n>', ':set relativenumber!<cr>', {noremap = true, silent = true})
-
--- Configure nvim-tree
-    -- set termguicolors to enable highlight groups
+-- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
-require('nvim-tree').setup()
-vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeFindFile<cr>', {noremap = true, silent = true})
-vim.api.nvim_create_autocmd('VimEnter', {
-    pattern = {'*'},
-    command = 'if argc() == 0 && !exists("s:std_in") | NvimTreeFocus | endif'
-})
 
--- Configure catppuccin colorscheme
-require('catppuccin').setup{
-    flavour = 'mocha',
-    color_overrides = {
-        mocha = {
-            base = "#151515",
-            mantle = "#000000",
-            crust = "#000000",
-        },
-    },
-}
-vim.cmd('colorscheme catppuccin')
+require("config.lazy")
+require("autocomplete")
+require("lspdiagnostic")
+
+
+-- local function bootstrap_paq(packages)
+--     local first_install = clone_paq()
+--     vim.cmd.packadd("paq-nvim")
+--     local paq = require("paq")
+--     if first_install then
+--         vim.notify("Installing plugins... If prompted, hit Enter to continue.")
+--     end
+-- 
+--     -- Read and install packages
+--     paq(packages)
+--     paq.install()
+-- end
+-- 
+--   -- Call helper function
+--   bootstrap_paq {
+--     "savq/paq-nvim",
+-- 
+--     -- Language server for neovim
+--     'neovim/nvim-lspconfig',
+-- 
+--     -- AST production for language helper packages
+--     'nvim-treesitter/nvim-treesitter',
+-- 
+--     -- Ale plugin for asynchronous syntax check
+--     'w0rp/ale',
+-- 
+--     -- Fugitive Bundle - Git Management
+--     'tpope/vim-fugitive',
+-- 
+--     -- Go support
+--     'fatih/vim-go',
+-- 
+--     -- ToggleTerm (persistent toggleable terminal)
+--     'akinsho/toggleterm.nvim',
+-- 
+--     -- Comfortable scrolling
+--     'yuttie/comfortable-motion.vim',
+-- 
+--     -- Auto close brackets braces and others
+--     'tpope/vim-surround',
+--     'tpope/vim-repeat',
+--     'townk/vim-autoclose',
+-- 
+--     -- Toogle number lines
+--     'jeffkreeftmeijer/vim-numbertoggle',
+-- 
+--     -- File tree
+--     'nvim-tree/nvim-tree.lua',
+--     'nvim-tree/nvim-web-devicons',
+-- 
+--     -- Airline-like lua Bundle (uses nvim-tree-web-devicons)
+--     'nvim-lualine/lualine.nvim',
+-- 
+--     -- Catppuccin color scheme
+--     'catppuccin/nvim',
+-- }
+-- 
+-- -- Configure w0rp/ale
+-- vim.g.ale_sign_error = '✘'
+-- vim.g.ale_sign_warning = '⚠'
+-- 
+-- -- Configure nvim-lualine/lualine.nvim
+-- require('lualine').setup {
+--     options = {
+--       theme = 'wombat',
+--     },
+--   }
+-- 
+-- -- Setup toggleterm
+-- require('toggleterm').setup()
+-- 
+-- -- Configure comfortable-motion
+-- vim.g.comfortable_motion_scroll_down_key = "j"
+-- vim.g.comfortable_motion_scroll_up_key = "k"
+-- vim.g.comfortable_motion_friction = 80.0
+-- vim.g.comfortable_motion_air_drag = 2.0
+-- 
+-- -- Configure vim-numbertoggle
+-- vim.api.nvim_set_keymap('n', '<C-n>', ':set relativenumber!<cr>', {noremap = true, silent = true})
+-- 
+-- -- Configure nvim-tree
+--     -- set termguicolors to enable highlight groups
+-- vim.opt.termguicolors = true
+-- require('nvim-tree').setup()
+-- vim.api.nvim_set_keymap('n', '<C-t>', ':NvimTreeFindFile<cr>', {noremap = true, silent = true})
+-- vim.api.nvim_create_autocmd('VimEnter', {
+--     pattern = {'*'},
+--     command = 'if argc() == 0 && !exists("s:std_in") | NvimTreeFocus | endif'
+-- })
+-- 
+-- -- Configure catppuccin colorscheme
+-- require('catppuccin').setup{
+--     flavour = 'mocha',
+--     color_overrides = {
+--         mocha = {
+--             base = "#151515",
+--             mantle = "#000000",
+--             crust = "#000000",
+--         },
+--     },
+-- }
+-- vim.cmd('colorscheme catppuccin')
