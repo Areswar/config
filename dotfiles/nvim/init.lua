@@ -10,6 +10,7 @@ vim.wo.colorcolumn = '100'
 
 -- Set the leader key to ,
 vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Write the file when we leave the buffer
 vim.opt.autowrite = true
@@ -84,15 +85,6 @@ vim.api.nvim_set_keymap('n', '<up>', '<nop>', {silent = true})
 vim.api.nvim_set_keymap('n', '<down>', '<nop>', {silent = true})
 vim.api.nvim_set_keymap('n', '<left>', '<nop>', {silent = true})
 vim.api.nvim_set_keymap('n', '<right>', '<nop>', {silent = true})
-
-local function clone_paq()
-    local path = vim.fn.stdpath("data") .. "/site/pack/paqs/start/paq-nvim"
-    local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
-    if not is_installed then
-        vim.fn.system { "git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", path }
-        return true
-    end
-end
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
