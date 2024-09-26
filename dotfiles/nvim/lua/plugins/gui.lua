@@ -52,4 +52,13 @@ return {
             })
         end
     },
+
+    -- Number toogle
+    {
+        'sitiom/nvim-numbertoggle',
+        config = function()
+            --require('nvim-numbertoggle').setup()
+            vim.api.nvim_set_keymap('n', '<C-n>', ':set relativenumber!<cr>', {noremap = true, silent = true})
+        end
+    },
 }
