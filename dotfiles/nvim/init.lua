@@ -1,6 +1,3 @@
--- Colorscheme
---vim.cmd('colorscheme jellybeans')
-
 -- disable netrw because NvimTree replaces it
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -9,8 +6,8 @@ vim.g.loaded_netrwPlugin = 1
 vim.wo.colorcolumn = '100'
 
 -- Set the leader key to ,
-vim.g.mapleader = ','
-vim.g.maplocalleader = ','
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Write the file when we leave the buffer
 vim.opt.autowrite = true
